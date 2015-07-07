@@ -641,6 +641,7 @@ def deleteItem(subcategory_id, item_id):
 @app.route('/cart')
 def getCart():
 
+    # Will implement
     # render cart for user bsaed on a session.
     return render_template("cart.html", login=loginState)
 

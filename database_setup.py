@@ -7,13 +7,8 @@ Base = declarative_base()
 
 
 # ================================================
-
-# restaurant = relationship(Restaurant)   (imp from frm menu class)
-# Create views for orders, other dynamic things....
-
-# may want to change cust_id to user_id
+# Todo:
 # change price from int to float
-#
 # add a star/ rating to reviews
 # ================================================
 
@@ -69,37 +64,6 @@ class Items(Base):
             'description': self.description,
             'price': self.price,
         }
-
-# class Product_Images(Base):
-#     __tablename__ = 'Product_Images'
-
-#     id = Column(Integer, primary_key=True)
-#     item_id = Column(Integer, ForeignKey('Items.id'))
-#     image = Column(Blob)
-
-#     @property
-#     def serialize(self):
-#         return {
-#             'id' : self.id,
-#             'item_id' : self.item_id, 
-#         }
-    
-
-
-# class subCategory_Images(Base):
-#     __tablename__ = 'subCategory_Images'
-
-#     id = Column(Integer, primary_key=True)
-#     subCategory_id = Column(Integer, ForeignKey('subCategories.id'))
-
-#     @property
-#     def serialize(self):
-#         return {
-#             'id' : self.id,
-#             'subCategory_id' : self.subCategory_id,
-#         }
-    
-
 
 class Users(Base):
     __tablename__ = 'Users'
