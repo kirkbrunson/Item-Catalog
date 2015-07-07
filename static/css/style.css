@@ -20,8 +20,6 @@ modularize vs flat?
 
 index copy
 splash resp
-footer center
-nav color
 */
 
 
@@ -59,19 +57,18 @@ body {
 
 	background-color: #3B1F2B;
 	color: #DBDFAC;
-	/* light blue: 158db0*/
 	display: inline-block;
 	text-align: center;
 }
 
-.footer > ul {
+.footer ul {
 	margin-bottom: 0px;
+	margin-left: -7%;
 }
 
 /* re target to be more specific... currently targetting all on page  fixed? */
 .footer ul > li {
 	padding: 1%;
-	clear: both;
 	list-style: none;
 	display: inline-block;
 }
@@ -102,7 +99,7 @@ body {
 }
 
 
-#asdf {
+#splash {
 	background: url('../img/main_clearance.jpg');
 	height: 400px;
 	/*background-repeat: no-repeat;*/

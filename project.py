@@ -67,18 +67,9 @@ DRY image add
 DRY func [getters- ext and pass qs parse args.]
 '''
 
+# Global var used as sig val for templates
 global loginState
 loginState = False
-
-
-@app.route('/test')
-def test():
-    global loginState
-    # loginState = False
-    print type(loginState)
-    print loginState
-
-    return "hi"
 
 
 # For a given file, return whether it's an allowed type or not
@@ -98,7 +89,7 @@ session = DBSession()
 
 # ===========================================================================
 # User Auth. Login/ Logout
-# Code from oauth class teaching g.id login
+# Code from oauth class teaching g openid login
 
 # Create anti-forgery state token
 @csrf.exempt
