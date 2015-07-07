@@ -6,8 +6,7 @@ CRUD webapp that is a simple store.
 
 ### Setup
 - Clone into a vagrant machine setup for the oauth class
-- Install Flask-seasurf 
-..* Run pip install flask-seasurf
+- Install Flask-seasurf: Run pip install flask-seasurf
 - Run python project.py
 - Navigate to 127.0.0.1:5000
 
