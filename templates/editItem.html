@@ -1,0 +1,38 @@
+{% extends "layout.html"%}
+
+
+{% block content %}
+<!-- content here -->
+
+<link rel="stylesheet" href="../../../static/css/style.css">
+
+<div class="row">
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+  
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 card card-login">
+    <h2>Edit Item</h2>
+    <hr>
+    <br>
+    <form action="#" method = "post">
+        <div class="form-group">
+        <label for="name">Name:</label>
+        <input type ="text" placeholder="{{item.name}}" class="form-control" maxlength="80" name="name">
+        <label for="description">Description:</label>
+        <input type ="text" placeholder="{{item.description}}" class="form-control" maxlength="140" name="description">
+        <label for="price">Price:</label>
+        <input type ="text" placeholder="{{item.price}}" class="form-control" maxlength="8" name="price">
+        <div class="padding-bottom"></div>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+        <button type="submit" class="btn btn-buy" id="submit" type="submit">
+        Edit</button>
+        </div>
+      </form> 
+      <a href=".."><button type="submit" class="btn btn-buy" id="submit" type="submit">Cancel</button></a>
+    
+  </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div> <!-- END ROW -->
+
+
+{% endblock %}

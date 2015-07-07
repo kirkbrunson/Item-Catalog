@@ -1,0 +1,60 @@
+{% extends "layout.html"%}
+
+
+{% block content %}
+<!-- content here -->
+<!-- TODO: finish side bar... dry for generic cat/ sub cat..... need subcat page separately -->
+
+<link rel="stylesheet" href="../../static/css/style.css">
+<link rel="stylesheet" href="../../static/font-awesome/css/font-awesome.min.css">
+
+<div class="row">
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 sidebar">
+		<h4>FIND YOUR STYLE</h4>
+		<hr>
+		<ul>
+			{% for category in categories %}
+			<li><a href="../{{category.id}}/">{{category.name}}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="tab-wrap" style="margin-top:5%;margin-bottom:175px;" >
+		{% for item in items %}
+		<span><a href="./{{item.id}}">
+		    <!-- this is incorrect. issue w. cat.id need rt: cat/scat/id else @ not read-->
+		<div class="col-lg-5 col-md-5 col-sm-5 col-xs-10 tab">
+			<div class="card">
+				
+				<img src="../../static/img/product/{{item.id}}.jpg" alt="">
+				<h5 class="tab-item">{{item.name}}</h5>
+				<h5 class="tab-price">${{item.price}}</h5>
+				
+			<div class="wrap">
+			{%if login %}				
+				<a href="./{{item.id}}/edit"><i class="fa fa-pencil"></i></a>
+				<a href="./{{item.id}}/delete"><i class="fa fa-trash-o"></i></a>
+			{% endif %}
+			</div>
+			</div>
+		</div>
+		
+		</a>
+		</span>
+		{% endfor %}
+
+	</div>  <!-- end items -->
+</div>
+			{% if login %}
+				<a href="./new">
+					<div class="card card-last" >
+						<i class="fa fa-plus-circle fa-lg fa-5x" style="margin-left:47%;margin-top:12%;"></i>
+					</div> 
+				</a>
+			{% endif %}
+
+
+
+
+
+{% endblock %}
+

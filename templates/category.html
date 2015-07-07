@@ -1,0 +1,42 @@
+{% extends "layout.html"%}
+
+
+{% block content %}
+<!-- content here -->
+
+<div class="row">
+	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 sidebar">
+		<h4>FIND YOUR STYLE</h4>
+		<hr>
+		<ul>
+			{% for category in categories %}
+			<li><a href="./{{category.id}}/">{{category.name}}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+		
+		{% for category in categories %}
+		<div class="card card-category">
+		<!-- template/ autogenerate all these cards -->
+			<img src="../static/img/category/{{category.id}}.jpg" alt="">
+			<h2>{{category.name}}</h2>
+			<h4>{{category.description}}</h4>
+			<a href="./{{category.id}}/"><button class="btn btn-category">Shop {{category.name}}</button></a>
+		{% if login %}	
+			<a href="./{{category.id}}/edit"><i class="fa fa-pencil"></i></a>
+			<a href="./{{category.id}}/delete"><i class="fa fa-trash-o"></i></a>
+		{% endif %}
+		</div>
+		{% endfor %}
+
+		{% if login %}
+			<a href="./new"><div class="card card-category card-last" >
+				<i class="fa fa-plus-circle fa-lg fa-5x" style="margin-left:47%;margin-top:12%;"></i>
+			</div></a>
+		{% endif %}
+	</div>
+</div>
+
+{% endblock %}
+

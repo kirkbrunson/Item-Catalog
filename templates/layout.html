@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sample Store | Buy your favorite things</title>
+
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../static/font-awesome/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="../static/css/style.css">
+
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+</head>
+
+<!-- ========================================================== 
+
+finish/ separate nav. link form to backend. style dropdpwn not all the way across.
+change default sytling?
+import fonts in header
+footer styles
+change social links
+
+
+ ========================================================== -->
+
+<body>
+
+<!-- Nav section  -->
+  <nav class="navbar navbar-default">
+  <div class="container">
+
+  <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="col-xs-2 col-sm-4">
+          <a class="navbar-brand" href="/">Store</a>
+        </div>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse col-xs-pull-6 col-sm-pull-6" id="bs-example-navbar-collapse-1">
+        <div class="navbar-right">
+          
+            <ul class="nav navbar-nav">
+            {%if login %}
+              <li><a id="nav_debug" href="/women">SHOP WOMEN</a></li>
+              <li><a id="nav_debug" href="/men">SHOP MEN</a></li>
+              <li><a id="nav_debug" href="/cart">CART</a></li>
+              <li><a id="nav_debug" href="/logout">LOGOUT</a></li>
+            {% endif %}
+            {%if login == False %}
+              <li><a id="nav_debug" href="/women">SHOP WOMEN</a></li>
+              <li><a id="nav_debug" href="/men">SHOP MEN</a></li>
+              <li><a id="nav_debug" href="/login">LOGIN</a></li>
+            {% endif %}
+            </ul>
+        </div>
+      </div>  
+  </div>
+</nav>    <!-- End Nav -->
+
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+
+    <footer class="footer">
+      <div class="container">
+        <ul>
+          <li><a href="https://plus.google.com/+kirkbrunson"><i class="fa fa-google-plus fa-lg __fa-social"></a></i></li>
+          <li><a href="https://www.twitter.com/kirkbrunson"><i class="fa fa-twitter fa-lg __fa-social"></a></i></li>
+          <li><a href="https://github.com/kirkbrunson"><i class="fa fa-github fa-lg __fa-social"></a></i></li>
+      </ul>
+      <h5>&copy; Copyright Kirk Brunson 2015. All rights reserved</h5>
+      </div>
+    </footer>
+
+
+</body>
+</html>

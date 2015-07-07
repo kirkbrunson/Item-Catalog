@@ -1,0 +1,30 @@
+{% extends "layout.html"%}
+
+
+{% block content %}
+<!-- content here -->
+
+<link rel="stylesheet" href="../../../static/css/style.css">
+
+<div class="row">
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+  
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 card card-login">
+    <h2>Delete product Category</h2>
+    <hr>
+    <h3>Are you sure you want to delete {{subCategory.name}}?</h3>
+    <br>
+    <form action="#" method = "post">
+        <div class="padding-bottom"></div>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+        <button type="submit" class="btn btn-buy" id="submit" type="submit">
+        Delete</button>
+    </form>
+    <a href=".."><button type="submit" class="btn btn-buy" id="submit" type="submit">Cancel</button></a>
+  </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div> <!-- END ROW -->
+
+
+{% endblock %}

@@ -1,0 +1,326 @@
+/*
+palette:
+#3B1F2B brwn
+#DB162F red
+#DDD1AA	light
+#5F758E	lblue
+
+lb2: 677BB2;
+#383961 blue
+#0a69d3 bright blue
+
+http://coolors.co/3b1f2b-db162f-ddd1aa-677bb2-383961
+
+*/
+
+
+/*
+Open issues
+modularize vs flat?
+
+index copy
+splash resp
+footer center
+nav color
+*/
+
+
+
+.card {
+	height: auto;
+	min-height: 300px; /* resp to content... fixed hurts universality */
+	color: 	#292929; 
+	background: #fff;
+	margin: 1.5%;
+	padding: 2%; 
+	box-shadow: 1px 1px 1px #e1e1e1;
+}
+
+
+html {
+  position: relative;
+  min-height: 100%;
+  font-family: "Open Sans";
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+
+
+/*  Footer styles   */
+
+.footer {
+  	position: absolute;
+  	bottom: 0px;
+	width: 100%;
+	padding: 1%;
+
+	background-color: #3B1F2B;
+	color: #DBDFAC;
+	/* light blue: 158db0*/
+	display: inline-block;
+	text-align: center;
+}
+
+.footer > ul {
+	margin-bottom: 0px;
+}
+
+/* re target to be more specific... currently targetting all on page  fixed? */
+.footer ul > li {
+	padding: 1%;
+	clear: both;
+	list-style: none;
+	display: inline-block;
+}
+
+.__fa-social {
+	color: #DBDFAC !important;
+}
+
+/* ============================================================= */
+/*index styles */
+.home-sidecard > h4 {
+	width: 100%;
+	color: #292929;
+	/*background-color: #DDD1AA;*/
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center; 
+}
+
+.home-sidecard > h3 {
+	width: 100%;
+	padding: 5% 0;
+	color: #fff;
+	background-color: #DB162F;
+	font-size: 2em;
+	font-weight: bold; 
+	text-align: center;
+}
+
+
+#asdf {
+	background: url('../img/main_clearance.jpg');
+	height: 400px;
+	/*background-repeat: no-repeat;*/
+	background-size: cover;
+	background-origin: center;
+	margin-left: 2px; 
+}
+
+.btn-custom {
+	width: 45%; /* this is an exception... delocalize*/
+	margin: 1%;
+	padding: 2% 5%; 
+	border: 2px solid #DB162F;
+	color: #DB162F;
+	background-color: #fff;
+	text-align: center;
+	display: inline-block;
+}
+
+.btn-custom:hover {
+	color: #fff;
+	background-color: #DB162F;
+}
+
+#btn-first {
+	margin-left: 3.5%;
+}
+
+
+/*looks styles*/
+
+.looks-header {
+	background-color: #0a69d3;
+	color: #fff;
+	font-size: 2.25em;
+	text-align: center;
+}
+
+.look {
+	padding: 5% 2% 1% 2%;
+}
+
+.look-img {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+.look-img:hover {
+	box-shadow: 2px 2px 2px #e1e1e1;
+	width: 100.15%;
+}
+
+.card-last {
+	margin-bottom: 175px !important;
+}
+
+/* ========================== categories ================================= */
+
+.card-category > img {
+	width: 100%;
+}
+
+.card-category > h2, h4 {
+	text-align: center;
+	color: #383961;
+}
+
+.btn-category {
+	width: 25%; /* this is an exception... delocalize*/
+	margin: 2% 37%;
+	padding: 2%; 
+	border: 2px solid #383961;
+	color: #383961;
+	background-color: #fff;
+	text-align: center;
+	display: inline-block;
+}
+
+.btn-category:hover {
+	color: #fff;
+	background-color: #383961;
+}
+
+/* ========================== item styles ================================= */
+
+.item-description {
+	padding-bottom: 5%;
+}
+
+.card-item > h2, h4 { /*rep from card-category need to DRY*/
+	color: #383961;
+	text-align: center;
+}
+
+.form-control {
+	margin: 2% 2% 2% 0%; 
+}
+
+.btn-buy {		/* this is just btn-cat with margin left non.... rm/dry also changed twice */
+	width: 25%; /* this is an exception... delocalize*/
+	margin: 2% 2% 2% 0%;
+	padding: 2%; 
+	border: 2px solid #383961;
+	color: #383961;
+	background-color: #fff;
+	text-align: center;
+	display: inline-block;
+}
+
+.btn-buy:hover {
+	color: #fff;
+	background-color: #383961;
+}
+
+
+/* ============================= login sytles ================================================ */
+
+.card-login > h2, h3, p {		/*again rep... dry this*/
+	text-align: center;
+	color: #383961; 
+}
+
+#signInButton {
+	margin-left: 42%;
+	margin-right: 42%;
+	margin-bottom: 5%;
+}
+
+.card-login > p {
+	font-size: 1.25em;
+}
+
+
+/* ============== sidebar =========================================== */
+
+.sidebar {
+	margin-top: 5%;
+}
+
+.sidebar > h4 {
+	font-weight: bold;
+}
+
+.sidebar > ul > li {
+	list-style: none;
+	margin-left: -15%;
+	padding: 2%;
+}
+
+.sidebar > ul > li > a {
+	color: #383961;
+	font-size: 1.5em;
+}
+
+/* ============== result tabs =========================================== */
+
+.tab {
+	padding:2%;
+}
+
+.tab img {
+	width: 100%;
+}
+
+.tab-i {
+	background-color: #fff;
+	box-shadow: 1px 1px 1px #d1d1d1;
+}
+
+
+.card > img {
+	width: 98%;
+	height: auto;
+	margin: 1%;
+}
+
+.tab-item {
+	text-align: left;
+	width: 60%;
+	font-weight: bold;
+	color: #383961;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+.tab-price {
+	width: 15%;
+	font-weight: bold;
+	color: #383961;
+}
+
+/* ============== Cart =========================================== */
+
+.cart > .card-cart {
+	padding: 2%;
+	height: auto;
+	min-height: 50px;
+}
+.card-cart > h2 {
+	color: #383961;
+	text-align: center;
+	font-weight: bold;
+} 
+
+.card-cart > p {
+	display: inline-block;
+}
+
+.checkout {
+	margin-left: 33%;
+}
+
+
+/* =================== setter fa-i elm ======================= */
+.fa {
+	margin-left: 97%;
+	color: #919191;
+}

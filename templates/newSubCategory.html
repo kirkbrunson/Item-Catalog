@@ -1,0 +1,36 @@
+{% extends "layout.html"%}
+
+
+{% block content %}
+<!-- content here -->
+
+<link rel="stylesheet" href="../../../static/css/style.css">
+
+<div class="row">
+  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+  
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 card card-login">
+    <h2>Add a new product Category</h2>
+    <hr>
+    <br>
+    <form action="#" method = "post">
+        <div class="form-group">
+        <label for="name">Name:</label>
+        <input type ="text" class="form-control" maxlength="80" name="name">
+        <label for="description">Description:</label>
+        <input type ="text" class="form-control" maxlength="140" name="description">
+        <div class="padding-bottom"></div>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
+        <button type="submit" class="btn btn-buy" id="submit" type="submit">
+        Create</button>
+        <input type="file" name="file" accept="image/*">
+        </div>
+      </form> 
+    
+  </div>
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+</div> <!-- END ROW -->
+
+
+{% endblock %}

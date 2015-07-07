@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+<!-- content here -->
+
+
+<!-- TODO:
+  margin-top on first card item.
+  add subtotal (calc server side)
+  add btn to rm from cart
+
+  impl stripe
+  grab subtotal info from cart when done
+  docs: https://stripe.com/docs/checkout/guides/flask
+  also: https://stripe.com/docs/tutorials/checkout
+ -->
+
+<div class="row">
+	<div class="col-lg-6 col-md-6 col-sm-12 cart">
+    <!-- this is  a stack of cards showing items in the cart -->
+    <div class="card card-cart">
+      <img src="" alt="">
+      <p>Item title</p>
+      <p>Item price</p>
+    </div>
+
+    <div class="card card-cart">
+      <img src="" alt="">
+      <p>Item title</p>
+      <p>Item price</p>
+    </div>
+
+    <div class="card card-cart">
+      <img src="" alt="">
+      <p>Item title</p>
+      <p>Item price</p>
+    </div>
+	
+	</div>
+
+
+	<div class="col-lg-5 col-md-5 col-sm-12 card card-cart">
+	   	<!-- button linking to cart -->
+      <h2>LOOKING GOOD?</h2>
+      <hr>
+      <div class="checkout">
+        <form action="" method="POST">
+          <script
+            src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="pk_test_6pRNASCoBOKtIshFeQd4XMUh"
+            data-amount="2000"
+            data-name="Shopify"
+            data-description="Demo ($20.00)"
+            data-image="/128x128.png">
+          </script>
+        </form>
+      </div>
+
+	</div> 
+
+</div>
+
+
+{% endblock %}
