@@ -24,6 +24,8 @@ from flask.ext.seasurf import SeaSurf
 # http://code.runnable.com/UiPcaBXaxGNYAAAL/
 # how-to-upload-a-file-to-the-server-in-flask-for-python
 
+# Soon to implement user profile that has previous orders, reviews & wishlist
+
 
 app = Flask(__name__)
 csrf = SeaSurf(app)
@@ -39,29 +41,22 @@ CLIENT_ID = json.loads(
 TODO
 ------
 last card/ side bar issue
-@media
-change FA to cdn
-DRY css
 
-
-cart backend
-cart template render dynamic
+- cart backend
+- cart template render dynamic
 
 user profile backend
 - getters/ setters ^
 - user profile template
 
-add reveiws backend
-add reviews to templates [user and items]
+- add reveiws backend
+- add reviews to templates [user and items]
 
 - image resizing: handle images too large/ not optimized/ wrong dims
 
-Error page templates
-
-
-issue with login session... getting 304 from google.
-
-TC/Err handling. && blnk form vals
+- issue with login session... getting 304 from google.
+- Error page templates
+- Err handling. && blnk form vals
 
 DRY image add
 DRY func [getters- ext and pass qs parse args.]
