@@ -11,7 +11,8 @@ CRUD webapp that is a simple store.
 - Run python tournament_test.py
 
 ### Notes:
-User profile and reviews coming soon.
+- User profile and reviews coming soon. 
+- Know issue of occasional login/logout issue. Try toggling.
 
 ### Credits:
 - [Flask-seasurf](https://github.com/maxcountryman/flask-seasurf/)
