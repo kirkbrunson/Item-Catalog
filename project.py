@@ -413,8 +413,6 @@ def newWomensSubCategory():
 
         # Add and commit
         session.add(newSubCategory)
-
-
         flash('New SubCategory %s Successfully Created' % newSubCategory.name)
         session.commit()
         return redirect('/women/')
@@ -438,11 +436,10 @@ def newMensSubCategory():
             filename = str(session.query(subCategories).order_by(
                 subCategories.id.desc()).first().id+1) + '.' + fileExt
 
-            file.save(os.path.join('static/img/category/', test))
+            file.save(os.path.join('static/img/category/', filename))
 
         # Add and commit
         session.add(newSubCategory)
-
         flash('New SubCategory %s Successfully Created' % newSubCategory.name)
         session.commit()
         return redirect('/men/')
@@ -471,8 +468,6 @@ def new_wItem(subcategory_id):
 
         # Add and commit
         session.add(newItem)
-
-
         flash('New Item %s Successfully Created' % newItem.name)
         session.commit()
         return redirect('/women/%r' % subcategory_id)
@@ -500,8 +495,6 @@ def new_mItem(subcategory_id):
 
         # Add and commit
         session.add(newItem)
-
-
         flash('New Item %s Successfully Created' % newItem.name)
         session.commit()
         return redirect('/men/%r' % subcategory_id)
@@ -513,7 +506,7 @@ def new_mItem(subcategory_id):
 @app.route('/women/<int:subcategory_id>/edit', methods=['GET', 'POST'])
 @app.route('/men/<int:subcategory_id>/edit', methods=['GET', 'POST'])
 @login_required
-def editMensSubCategory(subcategory_id):
+def editSubCategory(subcategory_id):
 
     editSubCategory = session.query(
         subCategories).filter_by(id=subcategory_id).one()
@@ -524,16 +517,24 @@ def editMensSubCategory(subcategory_id):
         if request.form['description']:
             editSubCategory.description = request.form['description']
 
+        if True:
+            file = request.files['file']
+
+            if file and allowed_file(file.filename):
+                fileExt = str(file.filename).split('.')[1]
+                filename = str(subcategory_id) + '.' + fileExt
+
+                file.save(os.path.join('static/img/category/', filename))
+
         # Add and commit
         session.add(editSubCategory)
-
         flash('SubCategory %s Successfully Edited' % editSubCategory.name)
         session.commit()
 
         # redirect to proper category
-        if subCategory.category_id == 1:
+        if editSubCategory.category_id == 1:
             return redirect('/women')
-        elif subCategory.category_id == 2:
+        elif editSubCategory.category_id == 2:
             return redirect('/men')
         else:
             redirect('/')
@@ -546,7 +547,7 @@ def editMensSubCategory(subcategory_id):
 @app.route('/women/<int:subcategory_id>/<int:item_id>/edit', methods=['GET', 'POST'])
 @app.route('/men/<int:subcategory_id>/<int:item_id>/edit', methods=['GET', 'POST'])
 @login_required
-def editMensItem(subcategory_id, item_id):
+def editItem(subcategory_id, item_id):
 
     item = session.query(Items).filter_by(id=item_id).one()
     if request.method == 'POST':
@@ -559,9 +560,16 @@ def editMensItem(subcategory_id, item_id):
         if request.form['price']:
             item.price = request.form['price']
 
-        # # Add and commit
-        session.add(item)
+        if True:
+           file = request.files['file']
 
+           if file and allowed_file(file.filename):
+            fileExt = str(file.filename).split('.')[1]
+            filename = str(item_id) + '.' + fileExt
+            file.save(os.path.join('static/img/product/', filename))
+
+        # Add and commit
+        session.add(item)
         flash('SubCategory %s Successfully Edited' % item.name)
         session.commit()
 
