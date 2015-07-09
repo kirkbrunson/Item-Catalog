@@ -7,13 +7,13 @@ CRUD webapp that is a simple store.
 ### Setup
 - Clone the vagrant machine setup for the oauth class, ssh into it and cd to FSND-P3
 - Install Flask-seasurf: Run pip install flask-seasurf
-- Run python createDB.py. _Note: rm samplestore.db before reinitializing._
+- Run python createDB.py. *Note: rm samplestore.db before reinitializing.*
 - Run python project.py
 - Navigate to 127.0.0.1:5000
 
 ### API Use:
-- GET req on /[category]/[json, xml] returns json or xml of current subcategories for given category
-- GET req on /category/[subcategory]/[json, xml] returns json or xml of current items for given subcategory
+- GET req on **/[category]/[json, xml]** returns json or xml of current subcategories for given category
+- GET req on **/category/[subcategory]/[json, xml]** returns json or xml of current items for given subcategory
 
 ### Requirements:
 - [Flask](http://flask.pocoo.org/) v0.9 and up
