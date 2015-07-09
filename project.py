@@ -13,6 +13,7 @@ from database_setup import Categories, subCategories, Items, Inventory, Users, S
 from oauth2client.client import flow_from_clientsecrets
 from oauth2client.client import FlowExchangeError
 from flask.ext.seasurf import SeaSurf
+from functools import wraps
 
 
 # General readme:
@@ -25,23 +26,6 @@ from flask.ext.seasurf import SeaSurf
 # how-to-upload-a-file-to-the-server-in-flask-for-python
 
 # Soon to implement user profile that has previous orders, reviews & wishlist
-
-
-# op err on cat/new
-# lgin dec. login state
-# readme
-# setup script
-
-
-app = Flask(__name__)
-csrf = SeaSurf(app)
-app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
-
-
-APPLICATION_NAME = "FSND-P3"
-CLIENT_ID = json.loads(
-    open('client_secrets.json', 'r').read())['web']['client_id']
-
 
 '''
 TODO
@@ -68,6 +52,18 @@ DRY image add
 DRY func [getters- ext and pass qs parse args.]
 '''
 
+
+
+app = Flask(__name__)
+csrf = SeaSurf(app)
+app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
+
+
+APPLICATION_NAME = "FSND-P3"
+CLIENT_ID = json.loads(
+    open('client_secrets.json', 'r').read())['web']['client_id']
+
+
 # Global var used as sig val for templates
 global loginState
 loginState = False
@@ -77,6 +73,16 @@ loginState = False
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
+
+# Require login 
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'credentials' not in login_session:
+            return redirect('/login')
+        return f(*args, **kwargs)
+    return decorated_function
+
 
 
 # Connect to DB and create DB session
@@ -388,11 +394,8 @@ def getItem(subcategory_id, item_id):
 
 # New subCategories
 @app.route('/women/new', methods=['GET', 'POST'])
+@login_required
 def newWomensSubCategory():
-
-    # Check if login is valid.
-    if 'username' not in login_session:
-        return redirect('/login')
 
     if request.method == 'POST':
         newSubCategory = subCategories(
@@ -422,10 +425,8 @@ def newWomensSubCategory():
 
 
 @app.route('/men/new', methods=['GET', 'POST'])
+@login_required
 def newMensSubCategory():
-
-    if 'username' not in login_session:
-        return redirect('/login')
 
     if request.method == 'POST':
         newSubCategory = subCategories(
@@ -457,9 +458,8 @@ def newMensSubCategory():
 
 # New item
 @app.route('/women/<int:subcategory_id>/new', methods=['GET', 'POST'])
+@login_required
 def new_wItem(subcategory_id):
-    if 'username' not in login_session:
-        return redirect('/login')
 
     if request.method == 'POST':
         newItem = Items(category=1, subCategory=subcategory_id, name=request.form[
@@ -488,10 +488,9 @@ def new_wItem(subcategory_id):
 
 
 @app.route('/men/<int:subcategory_id>/new', methods=['GET', 'POST'])
+@login_required
 def new_mItem(subcategory_id):
-    if 'username' not in login_session:
-        return redirect('/login')
-
+    
     if request.method == 'POST':
         newItem = Items(category=2, subCategory=subcategory_id, name=request.form[
                         'name'], description=request.form['description'], price=request.form['price'])
@@ -521,10 +520,8 @@ def new_mItem(subcategory_id):
 # Edit subCategories
 @app.route('/women/<int:subcategory_id>/edit', methods=['GET', 'POST'])
 @app.route('/men/<int:subcategory_id>/edit', methods=['GET', 'POST'])
+@login_required
 def editMensSubCategory(subcategory_id):
-
-    if 'username' not in login_session:
-        return redirect('/login')
 
     editSubCategory = session.query(
         subCategories).filter_by(id=subcategory_id).one()
@@ -557,10 +554,8 @@ def editMensSubCategory(subcategory_id):
 # Edit Item
 @app.route('/women/<int:subcategory_id>/<int:item_id>/edit', methods=['GET', 'POST'])
 @app.route('/men/<int:subcategory_id>/<int:item_id>/edit', methods=['GET', 'POST'])
+@login_required
 def editMensItem(subcategory_id, item_id):
-
-    if 'username' not in login_session:
-        return redirect('/login')
 
     item = session.query(Items).filter_by(id=item_id).one()
     if request.method == 'POST':
@@ -594,9 +589,8 @@ def editMensItem(subcategory_id, item_id):
 # Delete SubCategory
 @app.route('/women/<int:subcategory_id>/delete', methods=['GET', 'POST'])
 @app.route('/men/<int:subcategory_id>/delete', methods=['GET', 'POST'])
+@login_required
 def deleteSubCategory(subcategory_id):
-    if 'username' not in login_session:
-        return redirect('/login')
 
     subCategory = session.query(
         subCategories).filter_by(id=subcategory_id).one()
@@ -619,9 +613,8 @@ def deleteSubCategory(subcategory_id):
 # Delete Item
 @app.route('/women/<int:subcategory_id>/<int:item_id>/delete', methods=['GET', 'POST'])
 @app.route('/men/<int:subcategory_id>/<int:item_id>/delete', methods=['GET', 'POST'])
+@login_required
 def deleteItem(subcategory_id, item_id):
-    if 'username' not in login_session:
-        return redirect('/login')
 
     item = session.query(Items).filter_by(id=item_id).one()
     if request.method == 'POST':
