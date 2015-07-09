@@ -401,22 +401,20 @@ def newWomensSubCategory():
         newSubCategory = subCategories(
             category_id=1, name=request.form['name'], description=request.form['description'])
 
-        # Get the name of the uploaded file
+        # Get filename and save w. filesys
         file = request.files['file']
-        # Check if the file is one of the allowed types/extensions
+
         if file and allowed_file(file.filename):
-            # Make the filename safe, remove unsupported chars
             fileExt = str(file.filename).split('.')[1]
             filename = str(session.query(subCategories).order_by(
                 subCategories.id.desc()).first().id+1) + '.' + fileExt
-
 
             file.save(os.path.join('static/img/category/', filename))
 
         # Add and commit
         session.add(newSubCategory)
 
-        # edit flash msg
+
         flash('New SubCategory %s Successfully Created' % newSubCategory.name)
         session.commit()
         return redirect('/women/')
@@ -432,23 +430,19 @@ def newMensSubCategory():
         newSubCategory = subCategories(
             category_id=2, name=request.form['name'], description=request.form['description'])
 
-        # Get the name of the uploaded file
+        # Get filename and save w. filesys
         file = request.files['file']
-        # Check if the file is one of the allowed types/extensions
-        if file and allowed_file(file.filename):
 
-            # Make the filename safe, remove unsupported chars
+        if file and allowed_file(file.filename):
             fileExt = str(file.filename).split('.')[1]
             filename = str(session.query(subCategories).order_by(
                 subCategories.id.desc()).first().id+1) + '.' + fileExt
 
-            print filename
             file.save(os.path.join('static/img/category/', test))
 
         # Add and commit
         session.add(newSubCategory)
 
-        # edit flash msg
         flash('New SubCategory %s Successfully Created' % newSubCategory.name)
         session.commit()
         return redirect('/men/')
@@ -465,11 +459,10 @@ def new_wItem(subcategory_id):
         newItem = Items(category=1, subCategory=subcategory_id, name=request.form[
                         'name'], description=request.form['description'], price=request.form['price'])
 
-        # Get the name of the uploaded file
+        # Get filename and save w. filesys
         file = request.files['file']
-        # Check if the file is one of the allowed types/extensions
+
         if file and allowed_file(file.filename):
-            # Make the filename safe, remove unsupported chars
             fileExt = str(file.filename).split('.')[1]
             filename = str(session.query(Items).order_by(
                 Items.id.desc()).first().id+1) + '.' + fileExt
@@ -479,7 +472,7 @@ def new_wItem(subcategory_id):
         # Add and commit
         session.add(newItem)
 
-        # edit flash msg
+
         flash('New Item %s Successfully Created' % newItem.name)
         session.commit()
         return redirect('/women/%r' % subcategory_id)
@@ -495,11 +488,10 @@ def new_mItem(subcategory_id):
         newItem = Items(category=2, subCategory=subcategory_id, name=request.form[
                         'name'], description=request.form['description'], price=request.form['price'])
 
-        # Get the name of the uploaded file
+        # Get filename and save w. filesys
         file = request.files['file']
-        # Check if the file is one of the allowed types/extensions
+
         if file and allowed_file(file.filename):
-            # Make the filename safe, remove unsupported chars
             fileExt = str(file.filename).split('.')[1]
             filename = str(session.query(Items).order_by(
                 Items.id.desc()).first().id+1) + '.' + fileExt
@@ -509,7 +501,7 @@ def new_mItem(subcategory_id):
         # Add and commit
         session.add(newItem)
 
-        # edit flash msg
+
         flash('New Item %s Successfully Created' % newItem.name)
         session.commit()
         return redirect('/men/%r' % subcategory_id)
@@ -532,10 +524,9 @@ def editMensSubCategory(subcategory_id):
         if request.form['description']:
             editSubCategory.description = request.form['description']
 
-        # # Add and commit
+        # Add and commit
         session.add(editSubCategory)
 
-        # edit flash msg
         flash('SubCategory %s Successfully Edited' % editSubCategory.name)
         session.commit()
 
@@ -571,7 +562,6 @@ def editMensItem(subcategory_id, item_id):
         # # Add and commit
         session.add(item)
 
-        # edit flash msg
         flash('SubCategory %s Successfully Edited' % item.name)
         session.commit()
 
