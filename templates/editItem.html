@@ -16,11 +16,11 @@
     <form action="#" method = "post">
         <div class="form-group">
         <label for="name">Name:</label>
-        <input type ="text" placeholder="{{item.name}}" class="form-control" maxlength="80" name="name">
+        <input type ="text" value="{{item.name}}" class="form-control" maxlength="80" name="name">
         <label for="description">Description:</label>
-        <input type ="text" placeholder="{{item.description}}" class="form-control" maxlength="140" name="description">
+        <input type ="text" value="{{item.description}}" class="form-control" maxlength="140" name="description">
         <label for="price">Price:</label>
-        <input type ="text" placeholder="{{item.price}}" class="form-control" maxlength="8" name="price">
+        <input type ="text" value="{{item.price}}" class="form-control" maxlength="8" name="price">
         <div class="padding-bottom"></div>
         <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
         <button type="submit" class="btn btn-buy" id="submit" type="submit">

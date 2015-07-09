@@ -16,9 +16,9 @@
     <form action="#" method = "post">
         <div class="form-group">
         <label for="name">Name:</label>
-        <input type ="text" placeholder="{{subCategory.name}}" class="form-control" maxlength="80" name="name">
+        <input type ="text" value="{{subCategory.name}}" class="form-control" maxlength="80" name="name">
         <label for="description">Description:</label>
-        <input type ="text" placeholder="{{subCategory.description}}" class="form-control" maxlength="140" name="description">
+        <input type ="text" value="{{subCategory.description}}" class="form-control" maxlength="140" name="description">
         <div class="padding-bottom"></div>
         <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
         <button type="submit" class="btn btn-buy" id="submit" type="submit">
