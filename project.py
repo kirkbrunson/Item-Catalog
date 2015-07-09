@@ -27,6 +27,12 @@ from flask.ext.seasurf import SeaSurf
 # Soon to implement user profile that has previous orders, reviews & wishlist
 
 
+# op err on cat/new
+# lgin dec. login state
+# readme
+# setup script
+
+
 app = Flask(__name__)
 csrf = SeaSurf(app)
 app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
@@ -398,8 +404,9 @@ def newWomensSubCategory():
         if file and allowed_file(file.filename):
             # Make the filename safe, remove unsupported chars
             fileExt = str(file.filename).split('.')[1]
-            filename = str(session.query(Categories).order_by(
-                Items.id.desc()).first().id+1) + '.' + fileExt
+            filename = str(session.query(subCategories).order_by(
+                subCategories.id.desc()).first().id+1) + '.' + fileExt
+
 
             file.save(os.path.join('static/img/category/', filename))
 
@@ -428,12 +435,14 @@ def newMensSubCategory():
         file = request.files['file']
         # Check if the file is one of the allowed types/extensions
         if file and allowed_file(file.filename):
+
             # Make the filename safe, remove unsupported chars
             fileExt = str(file.filename).split('.')[1]
-            filename = str(session.query(Categories).order_by(
-                Items.id.desc()).first().id+1) + '.' + fileExt
+            filename = str(session.query(subCategories).order_by(
+                subCategories.id.desc()).first().id+1) + '.' + fileExt
 
-            file.save(os.path.join('static/img/category/', filename))
+            print filename
+            file.save(os.path.join('static/img/category/', test))
 
         # Add and commit
         session.add(newSubCategory)
