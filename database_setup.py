@@ -30,7 +30,7 @@ class subCategories(Base):
     __tablename__ = 'subCategories'
 
     id = Column(Integer, primary_key=True)
-    category_id = Column(Integer, ForeignKey('Categories.id'))
+    category_id = Column(Integer, ForeignKey('Categories.id', ondelete='CASCADE'))
     name = Column(String(80), nullable=False)
     description = Column(String(140), nullable=False
 )
@@ -49,8 +49,8 @@ class Items(Base):
 
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
-    category = Column(Integer, ForeignKey('Categories.id'))
-    subCategory = Column(Integer, ForeignKey('subCategories.id'))
+    category = Column(Integer, ForeignKey('Categories.id', ondelete='CASCADE'))
+    subCategory = Column(Integer, ForeignKey('subCategories.id', ondelete='CASCADE'))
     description = Column(String(250))
     price = Column(Integer)
 
