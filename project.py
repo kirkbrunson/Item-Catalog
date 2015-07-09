@@ -448,7 +448,7 @@ def newMensSubCategory():
 
 # New item
 @app.route('/women/<int:subcategory_id>/new', methods=['GET', 'POST'])
-def newItem(subcategory_id):
+def new_wItem(subcategory_id):
     if 'username' not in login_session:
         return redirect('/login')
 
@@ -479,7 +479,7 @@ def newItem(subcategory_id):
 
 
 @app.route('/men/<int:subcategory_id>/new', methods=['GET', 'POST'])
-def newItem(subcategory_id):
+def new_mItem(subcategory_id):
     if 'username' not in login_session:
         return redirect('/login')
 
