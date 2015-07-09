@@ -1,0 +1,292 @@
+{
+  "categories": [
+    "Women",
+    "Men"
+  ],
+  "subCategories": [
+      {
+        "description": "THE SUMMER STYLES YOU NEED RIGHT NOW.",
+        "category_id": 1,
+        "name": "Tee & Tanks"
+      },
+      {
+        "description": "IT'S ALL IN THE DETAILS",
+        "category_id": 1,
+        "name": "Jeans"
+      },
+      {
+        "description": "THE PERFECT LATE SUMMER STYLE WITH SANDALS IN MUST-HAVE METALLICS.",
+        "category_id": 1,
+        "name": "Shoes"
+      },
+      {
+        "description": "THE SUMMER STYLES YOU NEED RIGHT NOW.",
+        "category_id": 2,
+        "name": "Tee & Tanks"
+      },
+      {
+        "description": "THESE SHORT SLEEVE BUTTON DOWNS ARE NEXT-LEVEL IN PRINTS, MADRAS AND MORE.",
+        "category_id": 2,
+        "name": "Shirts"
+      },
+      {
+        "description": "IT'S ALL IN THE DETAILS",
+        "category_id": 2,
+        "name": "Jeans"
+      }
+    ],
+    "items": [
+        {
+        "category": 1,
+        "subCategory": 1,
+        "price": 12,
+        "name": "AEO SIGNATURE GRAPHIC T-SHIRT",
+        "description": "Show off your signature #AEOSTYLE."
+      },
+      {
+        "category": 1,
+        "subCategory": 1,
+        "price": 18,
+        "name": "AEO SIGNATURE GRAPHIC TANK",
+        "description": "The T you need."
+      },
+      {
+        "category": 1,
+        "subCategory": 1,
+        "price": 20,
+        "name": "AEO NYC DRAPEY MUSCLE TANK",
+        "description": "Get inspired by the city that never sleeps."
+      },
+      {
+        "category": 1,
+        "subCategory": 1,
+        "price": 12,
+        "name": "AEO SIGNATURE FAVORITE T-SHIRT",
+        "description": "Show off your signature #AEOSTYLE."
+      },
+      {
+        "category": 1,
+        "subCategory": 1,
+        "price": 12,
+        "name": "AEO SIGNATURE FAVORITE T-SHIRT",
+        "description": "Show off your signature #AEOSTYLE."
+      },
+      {
+        "category": 1,
+        "subCategory": 1,
+        "price": 15,
+        "name": "AEO NYC GRAPHIC T-SHIRT",
+        "description": "Get inspired by the city that never sleeps."
+      },
+      {
+        "category": 1,
+        "subCategory": 2,
+        "price": 30,
+        "name": "AEO DENIM X4 JEGGING CROP",
+        "description": "Our sexiest, skinniest fit. Looks like a jean, feels like a legging."
+      },
+      {
+        "category": 1,
+        "subCategory": 2,
+        "price": 25,
+        "name": "HI-RISE SKINNY JEAN",
+        "description": "A super skinny fit thats great for going out. Now with a hi rise waist."
+      },
+      {
+        "category": 1,
+        "subCategory": 2,
+        "price": 45,
+        "name": "KICK BOOT JEAN",
+        "description": "Classic fit with an added kick."
+      },
+      {
+        "category": 1,
+        "subCategory": 2,
+        "price": 30,
+        "name": "HI-RISE SKINNY JEAN",
+        "description": "A super skinny fit thats great for going out. Now with a hi rise waist."
+      },
+      {
+        "category": 1,
+        "subCategory": 2,
+        "price": 45,
+        "name": "STRAIGHT JEAN",
+        "description": "Our new & improved, favorite fit. The classic slim jean with a modern, sophisticated twist."
+      },
+      {
+        "category": 1,
+        "subCategory": 2,
+        "price": 45,
+        "name": "SUPER STRETCH STRAIGHT JEAN",
+        "description": "Our new & improved, favorite fit. The classic slim jean with a modern, sophisticated twist."
+      },
+      {
+        "category": 1,
+        "subCategory": 3,
+        "price": 20,
+        "name": "AEO Double T-Strap Sandal",
+        "description": "Your go-to sandal for every look."
+      },
+      {
+        "category": 1,
+        "subCategory": 3,
+        "price": 35,
+        "name": "AEO Double Strap Sandal",
+        "description": "Walk on."
+      },
+      {
+        "category": 1,
+        "subCategory": 3,
+        "price": 25,
+        "name": "AEO Braided Leather Flip Flop",
+        "description": "Walk on."
+      },
+      {
+        "category": 1,
+        "subCategory": 3,
+        "price": 5,
+        "name": "AEO Flip Flop",
+        "description": "Beach to street."
+      },
+      {
+        "category": 1,
+        "subCategory": 3,
+        "price": 289,
+        "name": "Swedish Hasbeens Agneta",
+        "description": "The Hasbeens toffels, bags and belts are based on original 70s models and are made of ecologically prepared natural grain leather."
+      },
+      {
+        "category": 1,
+        "subCategory": 3,
+        "price": 60,
+        "name": "AEO Side Fringe Heeled Bootie",
+        "description": "Walk on. Fringe trim adds a standout pop to your go-to booties."
+      },
+      {
+        "category": 2,
+        "subCategory": 4,
+        "price": 20,
+        "name": "AEO TONAL CREW T-SHIRT",
+        "description": "The T you need."
+      },
+      {
+        "category": 2,
+        "subCategory": 4,
+        "price": 20,
+        "name": "AEO STRIPED V-NECK T-SHIRT",
+        "description": "The T you need."
+      },
+      {
+        "category": 2,
+        "subCategory": 4,
+        "price": 20,
+        "name": "AEO HERITAGE CREW T-SHIRT",
+        "description": "Its iconic."
+      },
+      {
+        "category": 2,
+        "subCategory": 4,
+        "price": 20,
+        "name": "AEO COLORBLOCK CREW T-SHIRT",
+        "description": "Rock the colorblock."
+      },
+      {
+        "category": 2,
+        "subCategory": 4,
+        "price": 20,
+        "name": "AEO COLORBLOCK POCKET T-SHIRT",
+        "description": "Iconic style, reinvented."
+      },
+      {
+        "category": 2,
+        "subCategory": 4,
+        "price": 20,
+        "name": "AEO HERITAGE CREW T-SHIRT",
+        "description": "Its iconic."
+      },
+      {
+        "category": 2,
+        "subCategory": 5,
+        "price": 40,
+        "name": "AEO PINDOT POPLIN BUTTON DOWN SHIRT",
+        "description": "The crisp, polished shirt you need in your closet."
+      },
+      {
+        "category": 2,
+        "subCategory": 5,
+        "price": 40,
+        "name": "AEO PRINTED BUTTON DOWN SHIRT",
+        "description": "With a bold pattern and crisp cotton, this shirt was made for sunny days."
+      },
+      {
+        "category": 2,
+        "subCategory": 5,
+        "price": 40,
+        "name": "AEO MICROSTRIPE BUTTON DOWN SHIRT",
+        "description": "The crisp, refined shirt you need in your closet."
+      },
+      {
+        "category": 2,
+        "subCategory": 5,
+        "price": 40,
+        "name": "AEO BUFFALO CHECK BUTTON DOWN SHIRT",
+        "description": "Great #AEOSTYLE? Check."
+      },
+      {
+        "category": 2,
+        "subCategory": 5,
+        "price": 40,
+        "name": "AEO STRIPED OXFORD BUTTON DOWN SHIRT",
+        "description": "Casual, yet polished."
+      },
+      {
+        "category": 2,
+        "subCategory": 5,
+        "price": 40,
+        "name": "AEO MADRAS PLAID BUTTON DOWN SHIRT",
+        "description": "A bold new take on the timeless button down."
+      },
+      {
+        "category": 2,
+        "subCategory": 6,
+        "price": 50,
+        "name": "SLIM STRAIGHT CORE FLEX JEAN",
+        "description": "New Core Flex denim looks and feels like your favorite AEO denim, with just enough stretch for increased comfort & flexibility. Revolutionary comfort, retention & durability- made to move with you."
+      },
+      {
+        "category": 2,
+        "subCategory": 6,
+        "price": 45,
+        "name": "RELAXED STRAIGHT JEAN",
+        "description": "Our most comfortable jean, now even better than ever."
+      },
+      {
+        "category": 2,
+        "subCategory": 6,
+        "price": 45,
+        "name": "ORIGINAL STRAIGHT JEAN",
+        "description": "The every guy, every day jean. Sits low on waist. Straight leg. Perfect with your favorite T-shirt."
+      },
+      {
+        "category": 2,
+        "subCategory": 6,
+        "price": 50,
+        "name": "ORIGINAL BOOT JEAN",
+        "description": "The classic bootcut jean you love, given a twist with a low rise. Designed with a thick signature stitch at the back pocket."
+      },
+      {
+        "category": 2,
+        "subCategory": 6,
+        "price": 45,
+        "name": "CLASSIC BOOTCUT JEAN",
+        "description": "You cant go wrong with a classic."
+      },
+      {
+        "category": 2,
+        "subCategory": 6,
+        "price": 45,
+        "name": "LOOSE JEAN",
+        "description": "Our most relaxed, ready for anything jean."
+      }  
+    ]
+}
