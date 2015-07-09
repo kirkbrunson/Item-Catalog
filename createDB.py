@@ -3,8 +3,6 @@ from sqlalchemy.orm import sessionmaker
 from database_setup import Categories, subCategories, Items, Base
 import json
 
-# os.remove('samplestore.db')
-
 engine = create_engine('sqlite:///samplestore.db')
 Base.metadata.bind = engine
 
