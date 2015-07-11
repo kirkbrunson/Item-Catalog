@@ -102,7 +102,7 @@ class Sales(Base):
 
     id = Column(Integer, primary_key=True)
     custumer_id = Column(Integer, ForeignKey('Users.id'))
-    item_id = Column(Integer, ForeignKey('Items.id'))
+    item_id = Column(Integer, ForeignKey('Items.id', ondelete='CASCADE'))
     quantity = Column(Integer, nullable=False)
 
     @property
