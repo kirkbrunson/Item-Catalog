@@ -57,6 +57,7 @@ DRY func [getters- ext and pass qs parse args.]
 app = Flask(__name__)
 csrf = SeaSurf(app)
 app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 
 APPLICATION_NAME = "FSND-P3"
@@ -191,7 +192,6 @@ def gconnect():
     output += login_session['picture']
     output += ' " style = "width: 300px; height: 300px;border-radius: 150px;-webkit-border-radius: 150px;-moz-border-radius: 150px;"> '
     flash("you are now logged in as %s" % login_session['username'])
-    print "done!"
     return output
 
     # DISCONNECT - Revoke a current user's token and reset their login_session
